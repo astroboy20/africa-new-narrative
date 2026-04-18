@@ -7,47 +7,99 @@ import africanPattern from "@/assets/african-pattern.jpg";
 
 const questions = [
   {
-    question: "When you think of 'modern history,' which timeframe first comes to mind?",
+    question:
+      "When you think of 'modern history,' which timeframe first comes to mind?",
     options: [
-      { label: "A", text: "The Industrial Revolution in Europe (18th-19th Century)" },
-      { label: "B", text: "The rise and fall of ancient empires (Rome, Greece, etc.)" },
-      { label: "C", text: "The era of the great West African kingdoms (Ghana, Mali, Songhai) and the Sahelian civilizations." },
-      { label: "D", text: "The post-World War II era and the dawn of globalization." },
+      {
+        label: "A",
+        text: "The Industrial Revolution in Europe (18th-19th Century)",
+      },
+      {
+        label: "B",
+        text: "The rise and fall of ancient empires (Rome, Greece, etc.)",
+      },
+      {
+        label: "C",
+        text: "The era of the great West African kingdoms (Ghana, Mali, Songhai) and the Sahelian civilizations.",
+      },
+      {
+        label: "D",
+        text: "The post-World War II era and the dawn of globalization.",
+      },
     ],
   },
   {
-    question: "A child asks you, \"What was Africa like before the Europeans came?\" Your immediate thought is:",
+    question:
+      'A child asks you, "What was Africa like before the Europeans came?" Your immediate thought is:',
     options: [
-      { label: "A", text: "A vast, mysterious continent with tribes living in huts." },
-      { label: "B", text: "A place with some pyramids in Egypt, but not much else." },
-      { label: "C", text: "A continent of powerful empires, advanced universities (like Timbuktu), complex systems of governance, and rich artistic traditions." },
-      { label: "D", text: "It was probably similar to how it is now, just with less technology." },
+      {
+        label: "A",
+        text: "A vast, mysterious continent with tribes living in huts.",
+      },
+      {
+        label: "B",
+        text: "A place with some pyramids in Egypt, but not much else.",
+      },
+      {
+        label: "C",
+        text: "A continent of powerful empires, advanced universities (like Timbuktu), complex systems of governance, and rich artistic traditions.",
+      },
+      {
+        label: "D",
+        text: "It was probably similar to how it is now, just with less technology.",
+      },
     ],
   },
   {
-    question: "How important is it to learn a language from the African continent?",
+    question:
+      "How important is it to learn a language from the African continent?",
     options: [
-      { label: "A", text: "Not very important; English/French/Spanish are the global languages of power." },
-      { label: "B", text: "It would be a nice hobby, like learning Italian or Japanese." },
-      { label: "C", text: "It is a crucial act of reconnection and a tool for decolonizing the mind." },
+      {
+        label: "A",
+        text: "Not very important; English/French/Spanish are the global languages of power.",
+      },
+      {
+        label: "B",
+        text: "It would be a nice hobby, like learning Italian or Japanese.",
+      },
+      {
+        label: "C",
+        text: "It is a crucial act of reconnection and a tool for decolonizing the mind.",
+      },
       { label: "D", text: "I never really thought about it." },
     ],
   },
   {
-    question: "When discussing the 'transatlantic slave trade,' what is the primary lens you use?",
+    question:
+      "When discussing the 'transatlantic slave trade,' what is the primary lens you use?",
     options: [
       { label: "A", text: "It was a tragic but closed chapter in history." },
-      { label: "B", text: "It was a period where Africans were victims of European greed." },
-      { label: "C", text: "It was a global economic system built on terror, from which we must understand the full scope of African resistance and the resulting diaspora." },
-      { label: "D", text: "A sad event, but we need to focus on the present and future." },
+      {
+        label: "B",
+        text: "It was a period where Africans were victims of European greed.",
+      },
+      {
+        label: "C",
+        text: "It was a global economic system built on terror, from which we must understand the full scope of African resistance and the resulting diaspora.",
+      },
+      {
+        label: "D",
+        text: "A sad event, but we need to focus on the present and future.",
+      },
     ],
   },
   {
     question: "The concept of 'Pan-Africanism' makes you feel:",
     options: [
       { label: "A", text: "Confused or unfamiliar with the term." },
-      { label: "B", text: "Intrigued, but unsure of its relevance in today's world." },
-      { label: "C", text: "Inspired; it is the vital philosophy of unity and liberation for all African people, on the continent and in the diaspora." },
+      {
+        label: "B",
+        text: "Intrigued, but unsure of its relevance in today's world.",
+      },
+      {
+        label: "C",
+        text: "Inspired; it is the vital philosophy of unity and liberation for all African people, on the continent and in the diaspora.",
+      },
       { label: "D", text: "Like a political movement from the past." },
     ],
   },
@@ -55,7 +107,10 @@ const questions = [
 
 type Category = "A" | "B" | "C" | "D";
 
-const results: Record<Category, { headline: string; text: string; cta: string; ctaLink: string }> = {
+const results: Record<
+  Category,
+  { headline: string; text: string; cta: string; ctaLink: string }
+> = {
   A: {
     headline: "You're an Explorer. Your journey is just beginning.",
     text: "Your foundation is in traditional narratives, but your curiosity is the first step. You have a deep hunger to understand the world beyond the standard story. You need Africa Retold to provide the context and truth that was missing from your education.",
@@ -75,7 +130,8 @@ const results: Record<Category, { headline: string; text: string; cta: string; c
     ctaLink: "/programs",
   },
   D: {
-    headline: "You're a Diasporan Dreamer. It's time to turn sentiment into knowledge.",
+    headline:
+      "You're a Diasporan Dreamer. It's time to turn sentiment into knowledge.",
     text: "Your heart is in the right place, but good intentions need a strong foundation in facts. Move from feeling to knowing. Africa Retold offers the structured, rigorous curriculum you need to transform your passion into a powerful tool for educating the next generation.",
     cta: "Ground Your Dreams. Explore Programs for Parents.",
     ctaLink: "/programs",
@@ -120,23 +176,35 @@ const Quiz = () => {
   };
 
   const shareText = result
-    ? `I am "${results[result].headline.split(".")[0]}" on @AfricaRetold. How African are you? Take the quiz!`
+    ? `I am "${
+        results[result].headline.split(".")[0]
+      }" on @AfricaRetold. How African are you? Take the quiz!`
     : "";
 
-  const progress = showEmail || result ? 100 : ((current) / questions.length) * 100;
+  const progress =
+    showEmail || result ? 100 : (current / questions.length) * 100;
 
   return (
     <Layout>
       <section className="min-h-[80vh] py-24 relative">
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url(${africanPattern})`, backgroundSize: "150px", backgroundRepeat: "repeat" }} />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `url(${africanPattern})`,
+            backgroundSize: "150px",
+            backgroundRepeat: "repeat",
+          }}
+        />
 
         <div className="relative container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               How African Are You?
             </h1>
-            <p className="text-lg text-muted-foreground">A 5-Question Reality Check.</p>
+            <p className="text-lg text-muted-foreground">
+              A 5-Question Reality Check.
+            </p>
           </div>
 
           {/* Progress bar */}
@@ -167,7 +235,9 @@ const Quiz = () => {
                         : "border-border bg-card hover:border-primary/30 hover:shadow-sm"
                     }`}
                   >
-                    <span className="font-semibold text-primary mr-3">{opt.label}.</span>
+                    <span className="font-semibold text-primary mr-3">
+                      {opt.label}.
+                    </span>
                     <span className="text-foreground">{opt.text}</span>
                   </button>
                 ))}
@@ -179,7 +249,9 @@ const Quiz = () => {
                 onClick={handleNext}
                 disabled={!selected}
               >
-                {current < questions.length - 1 ? "Next Question" : "See My Results"}
+                {current < questions.length - 1
+                  ? "Next Question"
+                  : "See My Results"}
               </Button>
             </div>
           )}
@@ -193,7 +265,10 @@ const Quiz = () => {
               <p className="text-muted-foreground mb-8">
                 We'll also send you resources tailored to your result.
               </p>
-              <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto flex flex-col gap-4">
+              <form
+                onSubmit={handleEmailSubmit}
+                className="max-w-md mx-auto flex flex-col gap-4"
+              >
                 <Input
                   type="email"
                   placeholder="Your email address"
@@ -220,8 +295,12 @@ const Quiz = () => {
                   {results[result].text}
                 </p>
                 <a href={results[result].ctaLink}>
-                  <Button variant="hero" size="lg" className="bg-primary text-primary-foreground">
-                    {results[result].cta}
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="bg-primary text-primary-foreground w-fit text-wrap "
+                  >
+                    <p className="py-2"> {results[result].cta}</p>
                   </Button>
                 </a>
               </div>
@@ -232,7 +311,9 @@ const Quiz = () => {
                   <Share2 size={16} /> Share your result:
                 </span>
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    shareText
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary/10 transition-colors"
@@ -240,7 +321,9 @@ const Quiz = () => {
                   <Twitter size={18} className="text-foreground" />
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(shareText)}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(
+                    shareText
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary/10 transition-colors"
